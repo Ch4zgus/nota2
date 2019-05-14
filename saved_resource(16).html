@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<!-- saved from url=(0078)http://pre.camus.milenio.com/negocios/puedes-ahorrar-despensa-hot-days-walmart -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style>
+      body {
+        padding: 0;
+        margin:0;
+      }
+      #mute-button {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 18px;
+        height: 18px;
+        z-index:99999; /** Be sure to keep this high, to be over vpaid click elements **/
+        cursor: pointer;
+        padding: 17px;
+        display:none;
+      }
+
+      #main-container.with-controls #mute-button {
+        display:block;
+      }
+
+      #mute-button svg {
+        fill:#fff;
+        width: 18px;
+        height: 18px;
+      }
+
+      #mute-button svg.muted {
+        display:none;
+      }
+
+      #mute-button svg.not-muted {
+        display:block;
+      }
+
+      #mute-button.muted svg.muted {
+        display:block;
+      }
+
+      #mute-button.muted svg.not-muted {
+        display:none;
+      }
+
+      #close-button {
+        width: 36px;
+        height: 36px;
+        background-color: rgba(0,0,0, .5);
+        font-family: 'Roboto', sans-serif;
+        font-size: 12px;
+        color: #FFF;
+        opacity: .8;
+        cursor: pointer;
+        z-index: 99999; /** Be sure to keep this high, to be over vpaid click elements **/
+        position: absolute;
+        top: 10px;
+        right:10px;
+        display:none;
+      }
+
+      #main-container.with-controls #close-button {
+        display: block;
+      }
+
+      #close-button #loader {
+        width: 28px;
+        height: 28px;
+        left: 0;
+        margin: 4px;
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+      }
+      
+      /** replace button position for mobile and small screen **/
+      @media all and (max-width: 360px) {
+        #mute-button {
+          padding: 10px;
+        }
+
+        #close-button {
+          top: 4px;
+          right: 4px;
+        }
+      }
+
+      #main-container {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        position: absolute;
+        bottom:0px;
+        left: 0px;
+      }
+
+      #main-container.with-controls {
+        background-color: black;
+        transition-property: height;
+        transition-duration: 0.5s; /** close duration **/
+        transition-delay: 0s;
+        height: 0%;
+      }
+
+      #main-container.with-controls.show {
+        transition-duration: 0s;  /**open duration **//** Disabled for test to see if it have an impact on viewability **/
+        height: 100%;
+      }
+
+      /** PREVENT VIDEO TO BE DISPLAYED IN BACKGROUND IN IIV/FIV (they use their own video file) **/
+      #main-container #ad-container video {
+        display: none
+      }
+      #main-container.with-controls #ad-container video {
+        display: block
+      }
+
+    </style>
+  <style>
+      html, body {
+        margin: 0;
+      }</style></head>
+  <body>
+    <div id="main-container" class="container with-controls">
+        <div id="mute-button" class="muted">
+          <svg class="muted" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M3 9v6h-1v-6h1zm13-7l-9 5v2.288l7-3.889v13.202l-7-3.889v2.288l9 5v-20zm-11 5h-5v10h5v-10zm17.324 4.993l1.646-1.659-1.324-1.324-1.651 1.67-1.665-1.648-1.316 1.318 1.67 1.657-1.65 1.669 1.318 1.317 1.658-1.672 1.666 1.653 1.324-1.325-1.676-1.656z"></path>
+          </svg>
+          <svg class="not-muted" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M3 9v6h-1v-6h1zm13-7l-9 5v2.288l7-3.889v13.202l-7-3.889v2.288l9 5v-20zm-11 5h-5v10h5v-10zm13.008 2.093c.742.743 1.2 1.77 1.198 2.903-.002 1.133-.462 2.158-1.205 2.9l1.219 1.223c1.057-1.053 1.712-2.511 1.715-4.121.002-1.611-.648-3.068-1.702-4.125l-1.225 1.22zm2.142-2.135c1.288 1.292 2.082 3.073 2.079 5.041s-.804 3.75-2.096 5.039l1.25 1.254c1.612-1.608 2.613-3.834 2.616-6.291.005-2.457-.986-4.681-2.595-6.293l-1.254 1.25z"></path>
+          </svg>
+        </div>
+        <div id="close-button">
+          <div class="skip_text" style="display: none">Skip Ad</div>
+          <div id="loader">
+            <svg viewBox="0 0 100 100" style="display: block; width: 100%;">
+              <path d="M 50,50 m 0,-47 a 47,47 0 1 1 0,94 a 47,47 0 1 1 0,-94" stroke="#000" stroke-width="6" fill-opacity="0">
+              </path>
+              <path d="M 50,50 m 0,-47 a 47,47 0 1 1 0,94 a 47,47 0 1 1 0,-94" stroke="#fff" stroke-width="6" fill-opacity="0" style="stroke-dasharray: 295.416, 295.416; stroke-dashoffset: 0;">
+              </path>
+            </svg>
+            <div class="progressbar-text" style="position: absolute; left: 50%; top: 50%; padding: 0px; margin: 0px; transform: translate(-50%, -50%); color: rgb(255, 255, 255);">
+              X
+            </div>
+          </div>
+        </div>
+        <div id="ad-container"><div data-vast="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;VAST version=&quot;3.0&quot;&gt;
+  &lt;Ad id=&quot;7626386&quot; sequence=&quot;1&quot;&gt;
+        &lt;Wrapper&gt;
+            &lt;AdSystem version=&quot;v1&quot;&gt;SMART Adserver&lt;/AdSystem&gt;
+            &lt;VASTAdTagURI&gt;&lt;![CDATA[https://bid.g.doubleclick.net/dbm/vast?dbm_c=AKAmf-ADH_5Xx7jePHR4ta7OcDEk-BLIn8tSL5-7FuS8bnj7KrVQ67iB7liUxoREgSKx1q8boate&amp;dbm_d=AKAmf-B7T0p1WZD6P9j1c6Xx7STENC-bCFa-nAtejHvTx6Z2fUitN6zdg93uoXSuqvUOdvA6j42AfL6yGbBJbI-vnljmiM_P3iKg92jdAjBhI-2GXR5mdInh5Lo1FVTJe6847mLvRWFeOVsGm7CyZGSwvt_KID7-WuYRXHsPxlevGE9-DBq5Sk2Np6JEQHDfRkXKN3WE5ze9f4ndUOxFT49HUlZU2cJTysVof4qlG3m_W1I-xYblUkZn2JJDYSQlRfJVgo0QWdIv0S3xZ9hBeuJbl6q6WMpd-fYDrH7QAQy4S2XhscE27akUu6dLunyhBccL9eMTmqHBeDXXjUqFbCRGG2G8qmDvcc2BAP-TcqhokeAMQuUxB4Ki1s-0Y3n5uaNJrYDGMteJ3BR-lmDpuC99ji-H82Im_PNlzrb_Ys2NI-Rpx9bv8GK8ZQ0VoVZDLm725ZMDtpHIDbJy0RCZmtNdDjRtFPOTGfs1TppU9VHp2tZYZw9w6arCxSBQBs3htM6a6lX_GWeu3KA0IMhwm5ylylX4Te5REj9Vfbx4_fKvnwxso6b7aDSFhRQqHgc1b_Vs_iyduv3Phx7tsifVGGKuhqzTSmbsFgdKmR7Gk_f6WYs7nS_ygqUQOQ3FgoA8gKTMp57TAkYN-op34teKUYXuQ86tU2hrKVaf-aUAvwMcGwJcEh_PkCkWSkOhYpMnZ-jEwIM1p0k5OYNlB9GjwKqXCU0j1JXUUTDnCSKTIOr3TwrPUN6QJZ3w80t-VeQf_24BnWZetpoLyKlIFZqN-sm0Qnh0Ku587gVkDnni3tNRxx6V5ne3lCZf0l_NvK95KZhmKBuBH0XCGeWMohRO75KO21eayHYhEVXBMe5xi49ikaf1fzePWhP-IuxJxHhwklrMcV0tfNlezRpshKFr9T-FJ5gwf3VywhNTrs4ihtWCHTvzlLKwOkGrBFcX3DQA_SWc30mnfKSlEWOtBLuMlgHZ0OZnK0gn6jgPWHJybkiATC6WS_30w17tZ29QxkyJl1KZiGdI24yWTEkHF14wvvo16emTDLHvDFt8aWuei6zYD1pOOWRuTqqdoom4myfy1MdIHYCSOOJ0LRU8DlEavjB9ltbnrLPc2oBs5mbngfkcr4ioZFygzv-ELk-5DErPwf_50UKXwUy2wjPYVpLppe9btNtOabVOa9go0zbDn-aGwLQjRBw3y5yYgxg6QsudhmthaUV7IHnOpXI8hfxu_R--4tNVIlTTvMcKL834Vf1e1a3NSd9CL9wW1Vxz7n3NqLVBydCEA08I_0wnL9UTCT-Qk3ppaGa4lAOxELue2ZFtTZ4QPFk-RwpWjWeI36NMY1NuXyMz61N7l68DrkiDNQwMLQx2-k9Qvez8ybpnmtYYrI0rk-Vnk-oF1FTa1ijs2dWwBBjVCzCqlHZRDMrHe3sYJYc1P66wmyN291TnM4fcGXIEmQCZEOM45JrCYO82LtHwOK1AOpT6BRkBE7yZH9Lxcx3TO_KK_ldxIg6Gk6Dbmpa8gjU67Tf8HyrCmMXt321_IXjlcL53PPrHGieAtjaQ11RlmV1NvGcN97bbE6UC9UyDo3CWBjZS5KndtP04WqoAW8cmW5YniegwYzG5GpjU51bFwX5gUQ7qcDUZufd45KrnHLMxYV2e-ElXX7HLyKm4VcVEdvJgufhwbd4Dx0FLgYMbiNaUU2uTfju_2rq13KRtQfbArGnyBaQx7X6cRE-_VBf2q5iyGG54V9QHtDt9ckHQNzUjD8M298BirdsvB7MrHfsVEJDIzyXh5wM28BHUdx3NT0xZmqPrvyYhh8iwMQ_wArlDGUBxnH0KcqG3FH_CB6dYOGmHiIuovQaeOy-sTu8Oly0Ix1sia5UKUfvLicPGxpgm4fAGoWAPag0YZcnHz2nnCEQQxe0JiE6zBu_k9WQMR6h0KmLX3NCq5-QW4eqDljTMg9dWh_ri6gwK-WGHbIFlppZMnTOSphDeRoER8ScjxAvUAbbZnlTzOxOt4Dvxg8lAp4fwmVnrD8dke7TpXy8pSIFlPbJ_Be9iPP1Ra0jksc6ZBKBCuGq60hWoyGykr3WEt8_Ws8vuNdCNpiw-uqNg8Zxw_FD2hbYBqxhxVhM9NPOr4D0n2uTYY_hjWHHkOf3ldWTuOj5DN1MPfBzzrqITv5HV94A4xCE6ruuMk2GgOKp2wKDhLrvHMJmI1XeUfHrCTtrH0glqI-IxI2LQ4nu_P4MPn1SOhiZoj3xbTlBQU-_KBZzQKYI0E-xu3LpnSNZ70uP1m3R29RPl3viJ1jgpK6vvwF_1baPF1RTH27cdQZcMS9W36konxkGVfX4DSkShXhmEV2Lh0B5ldPSLuGZluNeO6wI489bOk5-Aog5R1CkbqdkKyX2jkWLqH9I2WzOkiSvI-ztfDjcllbTkF3FmscvX9rPwLGHVbyiR2iePMK873LmBlTrCzBKyM3MkrgULFpQ-2Pv1TxRHitBiFmeBs060WaLkzc4mOJckXMxt7AkD89LwGzew8zMPcYTgU8ReS4vdXD9O9wtVa-tDpSueoF82D980M1XM1mxkcDk1J2SLd0KnlPGPbh6KCN2Dmu1hJgLTaDy4LGMxctCgHbKzPcnRKJ4rY1LAWTwQLC6Gaa-RrL-iU4LmvyvsKP4jou6XHA&amp;cid=CAASBORooM4&amp;pr=60:11.09]]&gt;&lt;/VASTAdTagURI&gt;
+
+        
+            &lt;Impression id=&quot;impression_smart&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com:443/h/aip?tmstp=1557861106634&amp;uid=5517155367818986773&amp;pubid=1&amp;systgt=%24qc%3d1311019049%3b%24ql%3dHigh%3b%24qpc%3d01000%3b%24qt%3d47_1472_3249t%3b%24dma%3d0%3b%24b%3d16740%3b%24o%3d11061&amp;uii=382908064311935011&amp;acd=1557861106676&amp;visit=S&amp;statid=16&amp;tgt=%24dt%3d1t%3b%24ab%3d1%3badunit_name%3dstandard_1%3baggressive%3dfalse%3btemplate_category%3darticle%3bpublisher_country%3dMX%3bcontext_safe%3dtrue%3btag_id%3d12805478%3bvw%3d1%3bproducts%3dPPIV%3bproducts%3dPFIV%3bproducts%3dOMV%3bbridge_support%3dtrue%3bpublisher_category%3dNews%3bcontext_category%3d-%3b%3b%24hc&amp;pgDomain=http%3a%2f%2fpre.camus.milenio.com%2f&amp;capp=0&amp;mcrdbt=0&amp;insid=7626386&amp;siteid=224239&amp;imgid=0&amp;pgid=925206&amp;fmtid=64242&amp;ctdci=2&amp;vpw=958&amp;vph=596&amp;sig=%2bE94t%2fMTIV%2fO%2flfNV7pRHTQ0TiukvoxgyWcRaOqwhFM%3d&amp;rtb=1&amp;rtbnid=3050&amp;rtbbid=382908064311945698&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e&amp;rtblt=636934579066759358&amp;rtbet=0&amp;cftgid=1016b464fa83]]&gt;&lt;/Impression&gt;
+            
+            
+
+        
+            &lt;Creatives&gt;
+                &lt;Creative id=&quot;linear_7626386&quot;&gt;
+                    &lt;Linear&gt;
+                        &lt;TrackingEvents&gt;
+                            &lt;Tracking event=&quot;creativeView&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=creativeView&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e]]&gt;&lt;/Tracking&gt;
+                            &lt;Tracking event=&quot;start&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=start&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e]]&gt;&lt;/Tracking&gt;
+                            &lt;Tracking event=&quot;firstQuartile&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=firstQuartile&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e]]&gt;&lt;/Tracking&gt;
+                            &lt;Tracking event=&quot;midpoint&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=midpoint&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e]]&gt;&lt;/Tracking&gt;
+                            &lt;Tracking event=&quot;thirdQuartile&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=thirdQuartile&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e]]&gt;&lt;/Tracking&gt;
+                            &lt;Tracking event=&quot;complete&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=complete&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e]]&gt;&lt;/Tracking&gt;
+                            &lt;Tracking event=&quot;mute&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=mute&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e]]&gt;&lt;/Tracking&gt;
+                            &lt;Tracking event=&quot;unmute&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=unmute&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e]]&gt;&lt;/Tracking&gt;
+                            &lt;Tracking event=&quot;pause&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=pause&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e]]&gt;&lt;/Tracking&gt;
+                            &lt;Tracking event=&quot;rewind&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=rewind&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e]]&gt;&lt;/Tracking&gt;
+                            &lt;Tracking event=&quot;resume&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=resume&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e]]&gt;&lt;/Tracking&gt;
+                            &lt;Tracking event=&quot;fullscreen&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=fullscreen&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e]]&gt;&lt;/Tracking&gt;
+                            &lt;Tracking event=&quot;exitFullscreen&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=exitFullscreen&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e]]&gt;&lt;/Tracking&gt;
+                            &lt;Tracking event=&quot;expand&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=expand&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e]]&gt;&lt;/Tracking&gt;
+                            &lt;Tracking event=&quot;collapse&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=collapse&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e]]&gt;&lt;/Tracking&gt;
+                            &lt;Tracking event=&quot;closeLinear&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=close&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e]]&gt;&lt;/Tracking&gt;
+                            &lt;Tracking event=&quot;skip&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=skip&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e]]&gt;&lt;/Tracking&gt;
+                      
+
+                        &lt;Tracking event=&quot;start&quot;&gt;&lt;![CDATA[https://s.seedtag.com/s/event?type=start&amp;id=b24405b2-91da-4330-8651-a828dce11a59_SmartAdServerVideo]]&gt;&lt;/Tracking&gt;&lt;Tracking event=&quot;firstQuartile&quot;&gt;&lt;![CDATA[https://s.seedtag.com/s/event?type=firstQuartile&amp;id=b24405b2-91da-4330-8651-a828dce11a59_SmartAdServerVideo]]&gt;&lt;/Tracking&gt;&lt;Tracking event=&quot;midpoint&quot;&gt;&lt;![CDATA[https://s.seedtag.com/s/event?type=midpoint&amp;id=b24405b2-91da-4330-8651-a828dce11a59_SmartAdServerVideo]]&gt;&lt;/Tracking&gt;&lt;Tracking event=&quot;thirdQuartile&quot;&gt;&lt;![CDATA[https://s.seedtag.com/s/event?type=thirdQuartile&amp;id=b24405b2-91da-4330-8651-a828dce11a59_SmartAdServerVideo]]&gt;&lt;/Tracking&gt;&lt;Tracking event=&quot;complete&quot;&gt;&lt;![CDATA[https://s.seedtag.com/s/event?type=complete&amp;id=b24405b2-91da-4330-8651-a828dce11a59_SmartAdServerVideo]]&gt;&lt;/Tracking&gt;&lt;/TrackingEvents&gt;
+                        &lt;VideoClicks&gt;
+                            &lt;ClickTracking id=&quot;click_tracking_smart&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/h/micp?imgid=0&amp;insid=7626386&amp;pgid=925206&amp;uid=5517155367818986773&amp;uii=382908064311935011&amp;acd=1557861106676&amp;pubid=1&amp;tmstp=1557861106634&amp;tgt=%24dt%3d1t%3b%24ab%3d1%3badunit_name%3dstandard_1%3baggressive%3dfalse%3btemplate_category%3darticle%3bpublisher_country%3dMX%3bcontext_safe%3dtrue%3btag_id%3d12805478%3bvw%3d1%3bproducts%3dPPIV%3bproducts%3dPFIV%3bproducts%3dOMV%3bbridge_support%3dtrue%3bpublisher_category%3dNews%3bcontext_category%3d-%3b%3b%24hc&amp;systgt=%24qc%3d1311019049%3b%24ql%3dHigh%3b%24qpc%3d01000%3b%24qt%3d47_1472_3249t%3b%24dma%3d0%3b%24b%3d16740%3b%24o%3d11061&amp;bid=1&amp;bidnwid=3050&amp;bidid=382908064311945698&amp;bidh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e&amp;bidtime=636934579066759358&amp;bidenv=0&amp;ctdci=2&amp;vpw=958&amp;vph=596&amp;pgDomain=http%3a%2f%2fpre.camus.milenio.com%2f]]&gt;&lt;/ClickTracking&gt;
+
+                        &lt;/VideoClicks&gt;
+                    &lt;/Linear&gt;
+                &lt;/Creative&gt;
+
+                &lt;Creative id=&quot;nonlinear_7626386&quot;&gt;
+                    &lt;NonLinearAds&gt;
+                        &lt;TrackingEvents&gt;
+                            &lt;Tracking event=&quot;creativeView&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=creativeView&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e]]&gt;&lt;/Tracking&gt;
+                            &lt;Tracking event=&quot;start&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=start&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e]]&gt;&lt;/Tracking&gt;
+                            &lt;Tracking event=&quot;firstQuartile&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=firstQuartile&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e]]&gt;&lt;/Tracking&gt;
+                            &lt;Tracking event=&quot;midpoint&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=midpoint&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e]]&gt;&lt;/Tracking&gt;
+                            &lt;Tracking event=&quot;thirdQuartile&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=thirdQuartile&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e]]&gt;&lt;/Tracking&gt;
+                            &lt;Tracking event=&quot;complete&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=complete&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e]]&gt;&lt;/Tracking&gt;
+                            &lt;Tracking event=&quot;mute&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=mute&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e]]&gt;&lt;/Tracking&gt;
+                            &lt;Tracking event=&quot;unmute&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=unmute&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e]]&gt;&lt;/Tracking&gt;
+                            &lt;Tracking event=&quot;pause&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=pause&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e]]&gt;&lt;/Tracking&gt;
+                            &lt;Tracking event=&quot;rewind&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=rewind&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e]]&gt;&lt;/Tracking&gt;
+                            &lt;Tracking event=&quot;resume&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=resume&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e]]&gt;&lt;/Tracking&gt;
+                            &lt;Tracking event=&quot;fullscreen&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=fullscreen&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e]]&gt;&lt;/Tracking&gt;
+                            &lt;Tracking event=&quot;exitFullscreen&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=exitFullscreen&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e]]&gt;&lt;/Tracking&gt;
+                            &lt;Tracking event=&quot;expand&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=expand&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e]]&gt;&lt;/Tracking&gt;
+                            &lt;Tracking event=&quot;collapse&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=collapse&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e]]&gt;&lt;/Tracking&gt;
+                            &lt;Tracking event=&quot;acceptInvitation&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=acceptInvitation&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e]]&gt;&lt;/Tracking&gt;
+                            &lt;Tracking event=&quot;close&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=close&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e]]&gt;&lt;/Tracking&gt;
+                      
+
+                        &lt;/TrackingEvents&gt;
+                        &lt;NonLinear&gt;
+                            &lt;NonLinearClickTracking id=&quot;click_tracking_smart&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/h/micp?imgid=0&amp;insid=7626386&amp;pgid=925206&amp;uid=5517155367818986773&amp;uii=382908064311935011&amp;acd=1557861106676&amp;pubid=1&amp;tmstp=1557861106634&amp;tgt=%24dt%3d1t%3b%24ab%3d1%3badunit_name%3dstandard_1%3baggressive%3dfalse%3btemplate_category%3darticle%3bpublisher_country%3dMX%3bcontext_safe%3dtrue%3btag_id%3d12805478%3bvw%3d1%3bproducts%3dPPIV%3bproducts%3dPFIV%3bproducts%3dOMV%3bbridge_support%3dtrue%3bpublisher_category%3dNews%3bcontext_category%3d-%3b%3b%24hc&amp;systgt=%24qc%3d1311019049%3b%24ql%3dHigh%3b%24qpc%3d01000%3b%24qt%3d47_1472_3249t%3b%24dma%3d0%3b%24b%3d16740%3b%24o%3d11061&amp;bid=1&amp;bidnwid=3050&amp;bidid=382908064311945698&amp;bidh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e&amp;bidtime=636934579066759358&amp;bidenv=0&amp;ctdci=2&amp;vpw=958&amp;vph=596&amp;pgDomain=http%3a%2f%2fpre.camus.milenio.com%2f]]&gt;&lt;/NonLinearClickTracking&gt;
+
+                        &lt;/NonLinear&gt;
+                    &lt;/NonLinearAds&gt;
+                &lt;/Creative&gt;
+            &lt;/Creatives&gt;
+            &lt;Extensions&gt;
+                &lt;Extension&gt;
+                                                                
+                    
+                                                               &lt;offset isForced=&quot;0&quot;/&gt;
+                &lt;/Extension&gt;
+                &lt;Extension&gt;
+                    &lt;customisedScript&gt;&lt;![CDATA[]]&gt;&lt;/customisedScript&gt;
+                &lt;/Extension&gt;
+                &lt;Extension&gt;
+                    &lt;instanceCount&gt;&lt;![CDATA[1]]&gt;&lt;/instanceCount&gt;
+                &lt;/Extension&gt;
+                &lt;Extension&gt;
+                   &lt;SmartMetrics&gt;
+                      &lt;SmartMetric name=&quot;timeToClick&quot; type=&quot;linear&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=timeToClick&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e&amp;vd=0]]&gt;
+                      &lt;/SmartMetric&gt;
+                      &lt;SmartMetric name=&quot;v_firstSecond&quot; type=&quot;linear&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=v_firstSecond&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e&amp;vpva=0]]&gt;
+                      &lt;/SmartMetric&gt;
+                      &lt;SmartMetric name=&quot;v_firstQuartile&quot; type=&quot;linear&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=v_firstQuartile&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e&amp;vpva=0]]&gt;
+                      &lt;/SmartMetric&gt;
+                      &lt;SmartMetric name=&quot;v_midpoint&quot; type=&quot;linear&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=v_midpoint&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e&amp;vpva=0]]&gt;
+                      &lt;/SmartMetric&gt;
+                      &lt;SmartMetric name=&quot;v_thirdQuartile&quot; type=&quot;linear&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=v_thirdQuartile&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e&amp;vpva=0]]&gt;
+                      &lt;/SmartMetric&gt;
+                      &lt;SmartMetric name=&quot;v_complete&quot; type=&quot;linear&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=v_complete&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e&amp;vpva=0]]&gt;
+                      &lt;/SmartMetric&gt;
+                      &lt;SmartMetric name=&quot;viewcount&quot; type=&quot;linear&quot;&gt;&lt;![CDATA[https://ww3050.smartadserver.com/track/action?pid=925206&amp;iid=7626386&amp;cid=0&amp;sid=1557861106634&amp;key=viewcount&amp;num1=0&amp;num3=1&amp;ab=1&amp;fmtid=64242&amp;ctid=&amp;ctn=&amp;ctt=&amp;ctc=&amp;ctd=0&amp;cts=0&amp;cte=0&amp;ctr=&amp;ctpid=&amp;ctp=&amp;ctdid=&amp;ctdn=&amp;ctxid=&amp;ctmsid=&amp;ctk=&amp;vph=596&amp;vpw=958&amp;vit=0&amp;vct=0&amp;vcp=0&amp;vrn=&amp;rtb=1&amp;rtbbid=382908064311945698&amp;rtbet=0&amp;rtblt=636934579066759358&amp;rtbnid=3050&amp;rtbh=5f11a7259bf7eb91af267b1abe7ba90c33f38d4e&amp;vd=0]]&gt;
+                      &lt;/SmartMetric&gt;
+                   &lt;/SmartMetrics&gt;
+                &lt;/Extension&gt;
+                &lt;Extension&gt;
+                    &lt;SmartMacros&gt;
+                        &lt;statDomainID&gt;&lt;![CDATA[]]&gt;&lt;/statDomainID&gt;
+                        &lt;networkID&gt;&lt;![CDATA[3050]]&gt;&lt;/networkID&gt;
+                        &lt;templateID&gt;&lt;![CDATA[79358]]&gt;&lt;/templateID&gt;
+                        &lt;advertiserID&gt;&lt;![CDATA[374674]]&gt;&lt;/advertiserID&gt;
+                        &lt;campaignID&gt;&lt;![CDATA[1355854]]&gt;&lt;/campaignID&gt;
+                        &lt;insertionID&gt;&lt;![CDATA[7626386]]&gt;&lt;/insertionID&gt;
+                        &lt;siteID&gt;&lt;![CDATA[224239]]&gt;&lt;/siteID&gt;
+                        &lt;pageID&gt;&lt;![CDATA[925206]]&gt;&lt;/pageID&gt;
+                        &lt;formatID&gt;&lt;![CDATA[64242]]&gt;&lt;/formatID&gt;
+                        &lt;adBreakType&gt;&lt;![CDATA[1]]&gt;&lt;/adBreakType&gt;
+                        &lt;target&gt;&lt;![CDATA[$dt=1t;$ab=1;adunit_name=standard_1;aggressive=false;template_category=article;publisher_country=MX;context_safe=true;tag_id=12805478;vw=1;products=PPIV;products=PFIV;products=OMV;bridge_support=true;publisher_category=News;context_category=-;]]&gt;&lt;/target&gt;
+                        &lt;sessionID&gt;&lt;![CDATA[1557861106634]]&gt;&lt;/sessionID&gt;
+                        &lt;baseUrl&gt;&lt;![CDATA[https://ww3050.smartadserver.com]]&gt;&lt;/baseUrl&gt;
+                        &lt;instances&gt;&lt;![CDATA[1]]&gt;&lt;/instances&gt;
+                        &lt;videoPlayerWidth&gt;&lt;![CDATA[958]]&gt;&lt;/videoPlayerWidth&gt;
+                        &lt;videoPlayerHeight&gt;&lt;![CDATA[596]]&gt;&lt;/videoPlayerHeight&gt;
+                        &lt;referrer&gt;&lt;![CDATA[http://pre.camus.milenio.com/negocios/puedes-ahorrar-despensa-hot-days-walmart]]&gt;&lt;/referrer&gt;
+                        &lt;ip&gt;&lt;![CDATA[200.76.56.126]]&gt;&lt;/ip&gt;
+                        &lt;contentID&gt;&lt;![CDATA[]]&gt;&lt;/contentID&gt;
+                        &lt;contentTitle&gt;&lt;![CDATA[]]&gt;&lt;/contentTitle&gt;
+                        &lt;videoContentType&gt;&lt;![CDATA[]]&gt;&lt;/videoContentType&gt;
+                        &lt;videoContentCategory&gt;&lt;![CDATA[]]&gt;&lt;/videoContentCategory&gt;
+                        &lt;videoContentDuration&gt;&lt;![CDATA[0]]&gt;&lt;/videoContentDuration&gt;
+                        &lt;videoSeasonNumber&gt;&lt;![CDATA[0]]&gt;&lt;/videoSeasonNumber&gt;
+                        &lt;videoEpisodeNumber&gt;&lt;![CDATA[0]]&gt;&lt;/videoEpisodeNumber&gt;
+                        &lt;videoContentRating&gt;&lt;![CDATA[]]&gt;&lt;/videoContentRating&gt;
+                        &lt;contentProviderId&gt;&lt;![CDATA[]]&gt;&lt;/contentProviderId&gt;
+                        &lt;contentProviderName&gt;&lt;![CDATA[]]&gt;&lt;/contentProviderName&gt;
+                        &lt;videoContentDistributorId&gt;&lt;![CDATA[]]&gt;&lt;/videoContentDistributorId&gt;
+                        &lt;videoContentDistributorName&gt;&lt;![CDATA[]]&gt;&lt;/videoContentDistributorName&gt;
+                        &lt;externalContentId&gt;&lt;![CDATA[]]&gt;&lt;/externalContentId&gt;
+                        &lt;videoCmsId&gt;&lt;![CDATA[]]&gt;&lt;/videoCmsId&gt;
+                        &lt;videoContentTags&gt;&lt;![CDATA[]]&gt;&lt;/videoContentTags&gt;
+                    &lt;/SmartMacros&gt;
+                    
+                &lt;/Extension&gt;
+            &lt;/Extensions&gt;
+        &lt;Impression id=&quot;impression_seedtag&quot;&gt;&lt;![CDATA[https://s.seedtag.com/s/event?type=imp&amp;id=b24405b2-91da-4330-8651-a828dce11a59_SmartAdServerVideo]]&gt;&lt;/Impression&gt;&lt;/Wrapper&gt;
+    &lt;/Ad&gt;
+&lt;/VAST&gt;
+" style="display: none;"><div style="position: absolute; width: 958px; height: 596px;"><div style="display: block;"><video title="Advertisement" webkit-playsinline="true" playsinline="true" style="background-color: rgb(0, 0, 0); position: absolute; width: 958px; height: 596px; left: 0px; top: 0px;"></video><div style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px;"></div></div><div style="display: none;"><video title="Advertisement" webkit-playsinline="true" playsinline="true" style="background-color: rgb(0, 0, 0); position: absolute; width: 100%; height: 100%; left: 0px; top: 0px;"></video><div style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px;"></div></div><iframe src="./bridge3.304.0_en.html" allowfullscreen="" allow="autoplay" data-vantage-local-id="2712/1" data-vantage-frame-id="2731" width="958" height="596" style="border: 0px; opacity: 0; margin: 0px; padding: 0px; position: relative;"></iframe></div><iframe src="./saved_resource(29).html" data-vantage-local-id="2712/2" data-vantage-frame-id="2733" style="display: none; width: 0px; height: 0px;"></iframe><div style="border: 0px; margin: 0px; padding: 0px; position: absolute; width: 958px; height: 596px;"><div style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; display: none;"><iframe frameborder="0" allowtransparency="true" sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-popups-to-escape-sandbox" scrolling="no" name="seedtag_creative" style="display: block !important;float: none !important;padding: 0px !important;border: 0px !important;max-height: none !important;max-width: none !important;min-height: 0px !important;min-width: 0px !important;background: none !important;visibility: visible !important;overflow: hidden !important;z-index: 1 !important;width: 958px !important;height: 596px !important;margin-left: 0px !important;margin-top: 0px !important;will-change: transform;transform-origin: 0 0;transform: scale3d(1, 1, 1)" data-vantage-local-id="2712/3" data-vantage-frame-id="2734" src="./saved_resource(30).html"></iframe></div><img src="./track" style="display: none;"></div></div></div>
+    </div>
+  
+</body></html>
