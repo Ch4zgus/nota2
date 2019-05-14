@@ -1,0 +1,154 @@
+jpx_1557861188667_3508_callback({"ads":
+ {
+  "version": 1,
+  "count": 5,
+  "pixels":"http://us-u.openx.net/w/1.0/pd?plm=10&ph=26e53f82-d199-49df-9eca-7b350c0f9646&gdpr=0",
+  "oxt": 81.355,
+  "ad": [
+        {
+         "adunitid":539556892,
+         "adid":0,
+         "idx":"0",
+         "type":"html",
+         "html":"<div id='beacon_hqJIkA5hkNNQHCiqYg68vjsCzc' style='position: absolute; left: 0px; top: 0px; visibility: hidden;'><img src='http://delivery-us-central-1.openx.net/w/1.0/ri?ph=26e53f82-d199-49df-9eca-7b350c0f9646&ts=2DAABBgABAAECAAIBAAsAAgAAAGMcGAo0dXptUE9hOWo1HBbh5sWXtv2xxy4WrY_-8viLmNPgAQAcFun4jZDotaj1ShanhuKehN-8sbsBABbszdjNCxUCACwcFQIAABwmuPDHggQVBBUEJt6gw4IEFrrrwoIEAAAA'/></div><script type=\"text/javascript\">try{window.top.ServeBackupAd();} catch(e){}</script>",
+         "is_fallback":1,
+         "ts":"2DAABBgABAAECAAIBAAsAAgAAAGMcGAo0dXptUE9hOWo1HBbh5sWXtv2xxy4WrY_-8viLmNPgAQAcFun4jZDotaj1ShanhuKehN-8sbsBABbszdjNCxUCACwcFQIAABwmuPDHggQVBBUEJt6gw4IEFrrrwoIEAAAA",
+         "cpipc":0,
+         "auct_win_is_deal":0,
+         "pub_rev":"",
+         "brand_id":"",
+         "currency":"USD",
+         "creative":[
+           {
+             "id":"",
+             "width":"728",
+             "height":"90",
+             "target":"_blank",
+             "mime":"text/html",
+             "media": "<script type=\"text/javascript\">try{window.top.ServeBackupAd();} catch(e){}</script>",
+             "tracking":{
+               "impression":"http://delivery-us-central-1.openx.net/w/1.0/ri?ph=26e53f82-d199-49df-9eca-7b350c0f9646&ts=2DAABBgABAAECAAIBAAsAAgAAAGMcGAo0dXptUE9hOWo1HBbh5sWXtv2xxy4WrY_-8viLmNPgAQAcFun4jZDotaj1ShanhuKehN-8sbsBABbszdjNCxUCACwcFQIAABwmuPDHggQVBBUEJt6gw4IEFrrrwoIEAAAA",
+               "inview":"http://ox-d.justpremium.com/w/1.0/rvi?ts=2DAABBgABAAECAAIBAAsAAgAAAGMcGAo0dXptUE9hOWo1HBbh5sWXtv2xxy4WrY_-8viLmNPgAQAcFun4jZDotaj1ShanhuKehN-8sbsBABbszdjNCxUCACwcFQIAABwmuPDHggQVBBUEJt6gw4IEFrrrwoIEAAAA",
+               "click":"http://ox-d.justpremium.com/w/1.0/rc?ts=2DAABBgABAAECAAIBAAsAAgAAAGMcGAo0dXptUE9hOWo1HBbh5sWXtv2xxy4WrY_-8viLmNPgAQAcFun4jZDotaj1ShanhuKehN-8sbsBABbszdjNCxUCACwcFQIAABwmuPDHggQVBBUEJt6gw4IEFrrrwoIEAAAA"
+             }
+           }
+         ]
+        },
+        {
+         "adunitid":539543522,
+         "adid":0,
+         "idx":"1",
+         "type":"html",
+         "html":"<div id='beacon_a3myFbetUzcylubk6lb2xsnVrn' style='position: absolute; left: 0px; top: 0px; visibility: hidden;'><img src='http://delivery-us-central-1.openx.net/w/1.0/ri?ph=26e53f82-d199-49df-9eca-7b350c0f9646&ts=2DAABBgABAAECAAIBAAsAAgAAAGMcGAp3V0FQTzllaWtOHBbh5sWXtv2xxy4WrY_-8viLmNPgAQAcFtak0saDurnMIxaH98eVrOG_zf0BABbszdjNCxUCACwcFQIAABwmxJ_GggQVBBUEJt6gw4IEFrrrwoIEAAAA'/></div><script type=\"text/javascript\">try{window.top.ServeBackupAd();} catch(e){}</script>",
+         "is_fallback":1,
+         "ts":"2DAABBgABAAECAAIBAAsAAgAAAGMcGAp3V0FQTzllaWtOHBbh5sWXtv2xxy4WrY_-8viLmNPgAQAcFtak0saDurnMIxaH98eVrOG_zf0BABbszdjNCxUCACwcFQIAABwmxJ_GggQVBBUEJt6gw4IEFrrrwoIEAAAA",
+         "cpipc":0,
+         "auct_win_is_deal":0,
+         "pub_rev":"",
+         "brand_id":"",
+         "currency":"USD",
+         "creative":[
+           {
+             "id":"",
+             "width":"728",
+             "height":"90",
+             "target":"_blank",
+             "mime":"text/html",
+             "media": "<script type=\"text/javascript\">try{window.top.ServeBackupAd();} catch(e){}</script>",
+             "tracking":{
+               "impression":"http://delivery-us-central-1.openx.net/w/1.0/ri?ph=26e53f82-d199-49df-9eca-7b350c0f9646&ts=2DAABBgABAAECAAIBAAsAAgAAAGMcGAp3V0FQTzllaWtOHBbh5sWXtv2xxy4WrY_-8viLmNPgAQAcFtak0saDurnMIxaH98eVrOG_zf0BABbszdjNCxUCACwcFQIAABwmxJ_GggQVBBUEJt6gw4IEFrrrwoIEAAAA",
+               "inview":"http://ox-d.justpremium.com/w/1.0/rvi?ts=2DAABBgABAAECAAIBAAsAAgAAAGMcGAp3V0FQTzllaWtOHBbh5sWXtv2xxy4WrY_-8viLmNPgAQAcFtak0saDurnMIxaH98eVrOG_zf0BABbszdjNCxUCACwcFQIAABwmxJ_GggQVBBUEJt6gw4IEFrrrwoIEAAAA",
+               "click":"http://ox-d.justpremium.com/w/1.0/rc?ts=2DAABBgABAAECAAIBAAsAAgAAAGMcGAp3V0FQTzllaWtOHBbh5sWXtv2xxy4WrY_-8viLmNPgAQAcFtak0saDurnMIxaH98eVrOG_zf0BABbszdjNCxUCACwcFQIAABwmxJ_GggQVBBUEJt6gw4IEFrrrwoIEAAAA"
+             }
+           }
+         ]
+        },
+        {
+         "adunitid":539526593,
+         "adid":0,
+         "idx":"2",
+         "type":"html",
+         "html":"<div id='beacon_hkooO8Atz9WDx9CfNOsx10Qiob' style='position: absolute; left: 0px; top: 0px; visibility: hidden;'><img src='http://delivery-us-central-1.openx.net/w/1.0/ri?ph=26e53f82-d199-49df-9eca-7b350c0f9646&ts=2DAABBgABAAECAAIBAAsAAgAAAGQcGApXSndBMTh6N0lhHBbh5sWXtv2xxy4WrY_-8viLmNPgAQAcFsSZorTXrKWEvgEW8fPQhvnR2KrZAQAW7M3YzQsVAgAsHBUCAAAcJoKXxIIEFQQVBCbeoMOCBBa668KCBAAAAA'/></div><script type=\"text/javascript\">try{window.top.ServeBackupAd();} catch(e){}</script>",
+         "is_fallback":1,
+         "ts":"2DAABBgABAAECAAIBAAsAAgAAAGQcGApXSndBMTh6N0lhHBbh5sWXtv2xxy4WrY_-8viLmNPgAQAcFsSZorTXrKWEvgEW8fPQhvnR2KrZAQAW7M3YzQsVAgAsHBUCAAAcJoKXxIIEFQQVBCbeoMOCBBa668KCBAAAAA",
+         "cpipc":0,
+         "auct_win_is_deal":0,
+         "pub_rev":"",
+         "brand_id":"",
+         "currency":"USD",
+         "creative":[
+           {
+             "id":"",
+             "width":"120",
+             "height":"90",
+             "target":"_blank",
+             "mime":"text/html",
+             "media": "<script type=\"text/javascript\">try{window.top.ServeBackupAd();} catch(e){}</script>",
+             "tracking":{
+               "impression":"http://delivery-us-central-1.openx.net/w/1.0/ri?ph=26e53f82-d199-49df-9eca-7b350c0f9646&ts=2DAABBgABAAECAAIBAAsAAgAAAGQcGApXSndBMTh6N0lhHBbh5sWXtv2xxy4WrY_-8viLmNPgAQAcFsSZorTXrKWEvgEW8fPQhvnR2KrZAQAW7M3YzQsVAgAsHBUCAAAcJoKXxIIEFQQVBCbeoMOCBBa668KCBAAAAA",
+               "inview":"http://ox-d.justpremium.com/w/1.0/rvi?ts=2DAABBgABAAECAAIBAAsAAgAAAGQcGApXSndBMTh6N0lhHBbh5sWXtv2xxy4WrY_-8viLmNPgAQAcFsSZorTXrKWEvgEW8fPQhvnR2KrZAQAW7M3YzQsVAgAsHBUCAAAcJoKXxIIEFQQVBCbeoMOCBBa668KCBAAAAA",
+               "click":"http://ox-d.justpremium.com/w/1.0/rc?ts=2DAABBgABAAECAAIBAAsAAgAAAGQcGApXSndBMTh6N0lhHBbh5sWXtv2xxy4WrY_-8viLmNPgAQAcFsSZorTXrKWEvgEW8fPQhvnR2KrZAQAW7M3YzQsVAgAsHBUCAAAcJoKXxIIEFQQVBCbeoMOCBBa668KCBAAAAA"
+             }
+           }
+         ]
+        },
+        {
+         "adunitid":539557272,
+         "adid":0,
+         "idx":"3",
+         "type":"html",
+         "html":"<div id='beacon_6Dkp8NDdiDA4b5kCFm_Kt5jsKL' style='position: absolute; left: 0px; top: 0px; visibility: hidden;'><img src='http://delivery-us-central-1.openx.net/w/1.0/ri?ph=26e53f82-d199-49df-9eca-7b350c0f9646&ts=2DAABBgABAAECAAIBAAsAAgAAAGQcGAptY0x6OTg2cUYzHBbh5sWXtv2xxy4WrY_-8viLmNPgAQAcFt_UzZvK5eec7gEWlbjp8u7xqtzgAQAW7M3YzQsVAgAsHBUCAAAcJrD2x4IEFQQVBCbeoMOCBBa668KCBAAAAA'/></div><script type=\"text/javascript\">try{window.top.ServeBackupAd();} catch(e){}</script>",
+         "is_fallback":1,
+         "ts":"2DAABBgABAAECAAIBAAsAAgAAAGQcGAptY0x6OTg2cUYzHBbh5sWXtv2xxy4WrY_-8viLmNPgAQAcFt_UzZvK5eec7gEWlbjp8u7xqtzgAQAW7M3YzQsVAgAsHBUCAAAcJrD2x4IEFQQVBCbeoMOCBBa668KCBAAAAA",
+         "cpipc":0,
+         "auct_win_is_deal":0,
+         "pub_rev":"",
+         "brand_id":"",
+         "currency":"USD",
+         "creative":[
+           {
+             "id":"",
+             "width":"1920",
+             "height":"1200",
+             "target":"_blank",
+             "mime":"text/html",
+             "media": "<script type=\"text/javascript\">try{window.top.ServeBackupAd();} catch(e){}</script>",
+             "tracking":{
+               "impression":"http://delivery-us-central-1.openx.net/w/1.0/ri?ph=26e53f82-d199-49df-9eca-7b350c0f9646&ts=2DAABBgABAAECAAIBAAsAAgAAAGQcGAptY0x6OTg2cUYzHBbh5sWXtv2xxy4WrY_-8viLmNPgAQAcFt_UzZvK5eec7gEWlbjp8u7xqtzgAQAW7M3YzQsVAgAsHBUCAAAcJrD2x4IEFQQVBCbeoMOCBBa668KCBAAAAA",
+               "inview":"http://ox-d.justpremium.com/w/1.0/rvi?ts=2DAABBgABAAECAAIBAAsAAgAAAGQcGAptY0x6OTg2cUYzHBbh5sWXtv2xxy4WrY_-8viLmNPgAQAcFt_UzZvK5eec7gEWlbjp8u7xqtzgAQAW7M3YzQsVAgAsHBUCAAAcJrD2x4IEFQQVBCbeoMOCBBa668KCBAAAAA",
+               "click":"http://ox-d.justpremium.com/w/1.0/rc?ts=2DAABBgABAAECAAIBAAsAAgAAAGQcGAptY0x6OTg2cUYzHBbh5sWXtv2xxy4WrY_-8viLmNPgAQAcFt_UzZvK5eec7gEWlbjp8u7xqtzgAQAW7M3YzQsVAgAsHBUCAAAcJrD2x4IEFQQVBCbeoMOCBBa668KCBAAAAA"
+             }
+           }
+         ]
+        },
+        {
+         "adunitid":540574544,
+         "adid":0,
+         "idx":"4",
+         "type":"html",
+         "html":"<div id='beacon_uQ8_USyDP0om7bvauNdWTunivk' style='position: absolute; left: 0px; top: 0px; visibility: hidden;'><img src='http://delivery-us-central-1.openx.net/w/1.0/ri?ph=26e53f82-d199-49df-9eca-7b350c0f9646&ts=2DAABBgABAAECAAIBAAsAAgAAAGMcGApIT1BVQkF4bUQ5HBbh5sWXtv2xxy4WrY_-8viLmNPgAQAcFuqnuuOsr-nRThat7qSi2cjuqsoBABbszdjNCxUCACwcFQIAABwmoI3EgwQVBBUEJt6gw4IEFrrrwoIEAAAA'/></div><script type=\"text/javascript\">try{window.top.ServeBackupAd();} catch(e){}</script>",
+         "is_fallback":1,
+         "ts":"2DAABBgABAAECAAIBAAsAAgAAAGMcGApIT1BVQkF4bUQ5HBbh5sWXtv2xxy4WrY_-8viLmNPgAQAcFuqnuuOsr-nRThat7qSi2cjuqsoBABbszdjNCxUCACwcFQIAABwmoI3EgwQVBBUEJt6gw4IEFrrrwoIEAAAA",
+         "cpipc":0,
+         "auct_win_is_deal":0,
+         "pub_rev":"",
+         "brand_id":"",
+         "currency":"USD",
+         "creative":[
+           {
+             "id":"",
+             "width":"120",
+             "height":"90",
+             "target":"_blank",
+             "mime":"text/html",
+             "media": "<script type=\"text/javascript\">try{window.top.ServeBackupAd();} catch(e){}</script>",
+             "tracking":{
+               "impression":"http://delivery-us-central-1.openx.net/w/1.0/ri?ph=26e53f82-d199-49df-9eca-7b350c0f9646&ts=2DAABBgABAAECAAIBAAsAAgAAAGMcGApIT1BVQkF4bUQ5HBbh5sWXtv2xxy4WrY_-8viLmNPgAQAcFuqnuuOsr-nRThat7qSi2cjuqsoBABbszdjNCxUCACwcFQIAABwmoI3EgwQVBBUEJt6gw4IEFrrrwoIEAAAA",
+               "inview":"http://ox-d.justpremium.com/w/1.0/rvi?ts=2DAABBgABAAECAAIBAAsAAgAAAGMcGApIT1BVQkF4bUQ5HBbh5sWXtv2xxy4WrY_-8viLmNPgAQAcFuqnuuOsr-nRThat7qSi2cjuqsoBABbszdjNCxUCACwcFQIAABwmoI3EgwQVBBUEJt6gw4IEFrrrwoIEAAAA",
+               "click":"http://ox-d.justpremium.com/w/1.0/rc?ts=2DAABBgABAAECAAIBAAsAAgAAAGMcGApIT1BVQkF4bUQ5HBbh5sWXtv2xxy4WrY_-8viLmNPgAQAcFuqnuuOsr-nRThat7qSi2cjuqsoBABbszdjNCxUCACwcFQIAABwmoI3EgwQVBBUEJt6gw4IEFrrrwoIEAAAA"
+             }
+           }
+         ]
+        }]
+ }
+});
